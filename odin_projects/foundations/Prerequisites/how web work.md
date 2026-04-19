@@ -104,9 +104,80 @@
 
 
 
+#### web browser
+- software that help you to find a web page
+- aplication that allow you to visit website
+
+#### how web work
+- clients and servers
+    - computer connected to the internet are called client and servers
+    - clients is device connected to the internet to get data from server
+    - server is computer to provide data from clients request
+              ![image diagram](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works/simple-client-server.png)          
+     - server: computer that send my own device a data that i want to request
+       - client : device that i use to access the internet
+
+***
+  - **your internet connection** : allow yout to send and recieve data from the internet
+  - **tcp/ip** : transmission control protocol and internet protocol or tcp/ip comunication protocols that define how data should travel across the internet 
+- **DNS** : domain name system is like address for the website , the browser always look at the dns to find website ip adress  
+- **http:hypertext transfer protocol** is an application protocol that defines a language for clients and server to speak each other
+  
+### behind the scene
+- the browser goes to the dns server and find the real address of the server that website lives on
+- browser send an http request message to the server asking it to send a copy of website to the client, this message and all other data sent between the client and the server , is sent across your internet connection using tcp/ip
+- if the server approves the client's request the server send the clients a 200 ok message which "mean of course you can look at that website here it is" and then start sending the website's files to the browser as a series of small chunks called packets.
+- the browser assembles the small chunks into a complete web page and display it yo you 
+
+## **dns explained**
+- real web address or uniform resource locator are not memorable by human likely like this 192.0.2.172 it called ip adress and it is not good to memorize by human so dns come in dns is like youtube.com ,that is very easy to human to memorize
+- this system is uses special servers that match up a web address like type in uniform resource locator like youtube.com to the website real ip adress 
 
 
+## **packets explained**
+- when data is sent acrross the web it is sent in multiple small chunks called packets each packet contain
+- a **header** which includes details such as the server and the client ip adress the packet number ,the total number of packets in the transmission and details of the protocols used in transmission
+-  a **payload** which contain the actual data sent in the packet.
 
+
+ ### **reason behind it / why data sent in small packets**
+- they sometimes dropped or corrupted and when this happens it's quicker and easier for the client to request the missing packets rather than an entire file
+- the packet can be routed along different paths, making the transmission as efficient as possibility of slowing donw the network especially when many user are requesting the same resource simultaneously, the packets may arrive out of sequence , but the client can use the information in the packet header to make sure they are assembledin the correct order
+
+  ***
+  ### HTTP basic
+
+        get verb
+      GET /en-US/ HTTP/2
+        Host: developer.mozilla.org
+            response to get verb
+            HTTP/2 200
+
+        date: Tue, 11 Feb 2025 11:13:30 GMT
+        expires: Tue, 11 Feb 2025 11:40:01 GMT
+        server: Google frontend
+        last-modified: Tue, 11 Feb 2025 00:49:32 GMT
+        ETag: "65f26b7f6463e2347f4e5a7a2adcee54"
+        content-length: 45227
+        content-type: text/html
+        
+        <!doctype html> ... (the 45227 bytes of the requested web page HTML)
+  - http uses a simple language of verb to perform action such as making requests . the http get method is the one normally used to make http requests of the type described above 
+    
+
+|  code |  mean |  status |
+|---|---|---|
+|  200 |  okay |  successful |
+|   301   |    permanently moved   |             |
+|     404    |            cannot find the requested resource            |       not found      |
+|   400   |    The server can't process the request. This usually happens when the request isn't in a format the server understands, or has errors in it.   |             |
+|  403 |  dont have permission to acces the file |   |
+|   503   |                     The request cannot be handled due to a problem with the server. This is common when servers are offline for maintenance, and it's expected to be temporary.                    |  server error |
+
+***
+ ### component of uniform resource locator a.k.a url
+
+***
 ## sources 
 [mdn how internet work](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work#summary)
 [computer work in 5 minuta](https://youtu.be/7_LPdttKXPc)
@@ -115,3 +186,4 @@
 [switch](https://olin.es/en/blog/what-is-a-network-switch/)
 [different web page by mdn](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Browsing_the_web)
 [url](https://developer.mozilla.org/en-US/docs/Glossary/URL)
+[how web work last ](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works#clients_and_servers)
