@@ -19,7 +19,20 @@
 
 ## skill yang dibutuhkan untuk ui 
 > mock up tampilan ketika seluruh design dibuat, prototype, ui animations
->>
+>> keindahan tampilan
 ## skill yang dibutuhkan design grafis , branding 
 > mock up tampilan ketika seluruh design dibuat, prototype, ui animations
 >> harus mengedepankan logika dan ada sisi filosofisnya
+
+### ui 
+
+
+## sampai di 2.2
+
+
+
+
+
+
+
+
