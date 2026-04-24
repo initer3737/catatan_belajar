@@ -13,10 +13,14 @@
 
 ### internet
 - wire/fiber optic that burried in the ground
+- all computer or device that connected globally/global network , send data and can comunicate all together through cable fiber optic or wireles signal 
+- from the optical cable send to the signal has to be send to the cell tower and the signal reach your device in the form of magnetic wave 
+- interconnected network
 
 
 ### client
 - computer or device that initiate request /get access to the data from internet/servers
+- computer or any device that connect to the internet and get information in somewhere
 
 ### ip address
 - device that identified uniquely and it like home address in simple understanding
@@ -25,8 +29,11 @@
 - domain name come to solve human weakness like youtube.com
 
 ### dns
-- domain name system is a phonebook translating compleks ip address into easy to remember web address like yotube.com in order to make human understand/easey to memorize ip adress of some website 
+- domain name system is a phonebook translating compleks ip address into easy to remember web address like yotube.com in order to make human understand/easey to memorize ip adress of some website
+- simply dns is like translator between ip address of the website , when u are hit in url www.google.com dns simply translate www.google.com to ip address and u as client get the data u want
+- user enter the domain name in url uniform resources locator and then the browser request to the dns server to get coresponding ip address after that the browser forward request to the data center
 
+ 
 ### isp
 - internet service provider 
 - company that provide individuals and business access to the internet
@@ -37,10 +44,22 @@
 - tecnology data sender via internet signal, using telephone cable/line
 
 ### package 
-- package is something like image that send to  someone and internet break it to smaller pieces  called package and asemble it in one image full  
+- package is something like image that send to  someone and internet break it to smaller pieces  called package and asemble it in one image full  to make transfer data more easy because if it not break into small chunks it will be hard for internet to send or transfer data  
+Earlier, we used the term "packets" to describe the format in which the data is transferred between the client and server. What do we mean here?
+
+> When data is sent across the web, it is sent in multiple small chunks called packets. Each packet contains:
+
+* A **header**, which includes details such as the server and client IP address, the packet number, the total number of packets in the transmission, and details of the protocols used in the transmission.
+* A **payload**, which contains the actual data sent in the packet.
+
+There are multiple reasons why data is sent in small packets, but most significantly:
+
+* They are sometimes dropped or corrupted, and when this happens, it's quicker and easier for the client to request the missing packets rather than an entire file.
+* The packets can be routed along different paths, making the transmission as efficient as possible and reducing the possibility of slowing down the network — especially when many users are requesting the same resource simultaneously. The packets may arrive out of sequence, but the client can use the information in the packet headers to make sure they are assembled in the correct order.
 
 ### server
  - powerfull computer the job is to provide you something like webpage or video
+ - it is like computer that response to you as a clients whatever client want from server it is like waiter in the restoran they will ask what u want and give the service u want as a client/customer
    
 ### router
 - A router is _a networking device that acts as a traffic controller, directing data packets between different networks_—typically between your local home/office network (LAN) and the internet (WAN). It enables multiple devices (phones, computers, smart TVs) to share a single internet connection provided by a modem.
@@ -66,10 +85,16 @@
 - menentukan kecepatan jaringan user dalam mengakses ,mendownload kontent yang ada di internet
 
 ### switch
-- allow multipple device to be connected within a local area network/lan 
+- allow multipple device to be connected within a local area network/lan
+- computer that has 1 job to make sure data from computer a is transfer the data to the target destination
+
+
+
+![switch](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work/internet-schema-3.png)
+
 
 ### router vs switch
-- router connect 1 network to the internet
+- router connect 1 network to the internet wan aka wide area network
 - switch connect multiple device into an lan/local area network
   
 #### web page
@@ -136,8 +161,9 @@
 
 ## **packets explained**
 - when data is sent acrross the web it is sent in multiple small chunks called packets each packet contain
-- a **header** which includes details such as the server and the client ip adress the packet number ,the total number of packets in the transmission and details of the protocols used in transmission
+- a **header** which includes details such as the server and the client ip adress, the packet number ,the total number of packets in the transmission and details of the protocols used in transmission
 -  a **payload** which contain the actual data sent in the packet.
+-  because if file not chunked by internet it will be hard for the internet to carry the file through the it destination
 
 
  ### **reason behind it / why data sent in small packets**
@@ -187,3 +213,63 @@
 [different web page by mdn](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Browsing_the_web)
 [url](https://developer.mozilla.org/en-US/docs/Glossary/URL)
 [how web work last ](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works#clients_and_servers)
+
+***
+## lesson overview
+***
+
+> This section contains a general overview of topics that you will learn in this lesson.
+
+1. Describe what the internet is.
+2. Describe what packets are and how they are used to transfer data.
+3. Understand the differences between a web page, web server, web browser and search engine.
+4. Briefly explain what a client is.
+5. Briefly explain what a server is.
+6. Explain what IP addresses are.
+7. Explain what DNS servers are.
+***
+1. internet is computer or device that conected globaly in the network via fiber optic cable but before connected to the wan device must connected to switch router isp then fully connected in wan wide area network  
+2. packet are chunks of data that has been break by the internet in order to make ease to transfer the file to it destination
+3. differences between a web page, web server, web browser and search engine
+    1. **web page** is document that written in markup language like html  and displayed in the web browser
+    2. **web server** is computer for  hosting web to the server
+    3. **web browser** is a software that display web page content
+    4. **search engine** web service to help you find a website
+4. **client** is device that connect to the internet
+5. **server** is computer that provide what client want like waiter in the restoran
+6. **ip address** is like home address but it is for our device ip address are unique
+7. **dns** or domain name system are system that translate domain like youtube.com into address like 192.168.90 and it is to make human easy to memorize rather than memorize ip address of some website, behind the scene dns are translate domain like google.com into ip address like 192.168.90 and then negotiate to server about content that client want to request in domain like google.com ,when the ip adress is known or match it tell your computer which match ip address of registered domain and then start negotiate what content are want to display in the web browser or client  
+***
+### Assignment
+***
+1. Watch this BBC short for an [overview of how the internet works](https://www.youtube.com/watch?v=eHp1l73ztB8).
+2. Read this [Mozilla article on “How does the internet work?”](https://developer.mozilla.org/en-US/Learn/Common_questions/How_does_the_Internet_work).
+3. Watch [How the Internet Works in 5 Minutes](https://youtu.be/7_LPdttKXPc?t=46s).
+4. Read up on the [differences between a web page, a web server, and a search engine](https://developer.mozilla.org/en-US/Learn/Common_questions/Pages_sites_servers_and_search_engines).
+5. Watch this [Google short explaining what a web browser is](https://youtu.be/BrXPcaRlBqo). Then, use this site to [find out your current web browser and version](https://www.whatsmybrowser.org/).
+6. Read about [how different parts of the web interact with each other](https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/How_the_Web_works#clients_and_servers) and read this [MDN article about how a DNS request works](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_domain_name#how_does_a_dns_request_work). Alternatively, here is a [video about how a DNS request works](https://www.youtube.com/watch?v=72snZctFFtA\&t=45s).
+***
+
+***
+
+### [Knowledge check](https://www.theodinproject.com/lessons/foundations-how-does-the-web-work#knowledge-check)
+***
+> The following questions are an opportunity to reflect on key topics in this lesson. If you can’t answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
+
+* [What is a web server?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Pages_sites_servers_and_search_engines)
+* [What is a network?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)
+* [What is the internet?](https://www.youtube.com/watch?v=7_LPdttKXPc\&t=46s)
+* [What is an IP address?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)
+* [What is a router?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)
+* [What is an ISP?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)
+* [What are packets and how are they used to transfer data?](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works#packets_explained)
+* [What is a client?](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works#clients_and_servers)
+* [What is a server?](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works#clients_and_servers)
+* [What is a web page?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Pages_sites_servers_and_search_engines)
+* [What is a web browser?](https://www.youtube.com/watch?v=BrXPcaRlBqo\&feature=youtu.be)
+* [What is a search engine?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Pages_sites_servers_and_search_engines)
+* [What is a DNS request?](https://www.youtube.com/watch?v=72snZctFFtA\&t=45s)
+* [Which browser are you currently using?](https://www.whatsmybrowser.org/)
+* [In your own words, describe the process that takes place when you initiate a search on google.com in terms of what we discussed.](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Pages_sites_servers_and_search_engines)
+
+***
