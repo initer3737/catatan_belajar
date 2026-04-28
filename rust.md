@@ -1,11 +1,11 @@
-begah<!-- retreter -->  -->
+begah
 
-\`\`\`{.typescript} 
+```{.typescript} 
 function myFunction (arg: string|number): boolean { 
      return typeof arg === 'string' 
 }
 
-\`\`\`
+```
 
 
 
