@@ -1,13 +1,27 @@
+---
+tags:
+  - codding
+cssclasses:
+  - "9"
+author: aji
+grade: "12"
+tag: "12"
+---
+--- 
+three minus --- on the top to create metadata
+
 ## how internet works
 
 ### summary
 - internet is backbone of the web
 - internet is a large network of computer which comunicate all together
-
+	- internet adalah tulang belakangnya web
+	- internet adalah komputer yang saling terhubung dan saling berkomunikasi satu sama lain 
 
 
   ### history
   - it began 1960 as a us-army funded research project , them evolved into a public infrastructure in the 1980s with the support of many public universities and private companies. The various technologies that support the Internet have evolved over time, but the way it works hasn't changed that much: Internet is a way to connect computers all together and ensure that, whatever happens, they find a way to stay connected.
+  - dimulai pada tahun1960 an sebagai project research yang didanai oleh tentara amerika ,lalu berevolusi menjadi infrastruktur public pada tahun 1980 an dan didukung universiras publik dan perusahaan swasta berbagai macan teknolohi yang mendukung internet berevolusi tiap waktu , tetapi cara kerjanya tidak berubah :internet adalah cara untuk komputer terkoneksi secara massak dan memastikan apapun yang terjadi ,mereka akan tetap terkoneksi
 
 
 
@@ -29,7 +43,7 @@
 - domain name come to solve human weakness like youtube.com
 
 ### dns
-- domain name system is a phonebook translating compleks ip address into easy to remember web address like yotube.com in order to make human understand/easey to memorize ip adress of some website
+- domain name system is a phonebook translating compleks ip address into easy to remember web address like yotube.com in order to make human understand/easy to memorize ip adress of some website
 - simply dns is like translator between ip address of the website , when u are hit in url www.google.com dns simply translate www.google.com to ip address and u as client get the data u want
 - user enter the domain name in url uniform resources locator and then the browser request to the dns server to get coresponding ip address after that the browser forward request to the data center
 
@@ -191,14 +205,14 @@ There are multiple reasons why data is sent in small packets, but most significa
   - http uses a simple language of verb to perform action such as making requests . the http get method is the one normally used to make http requests of the type described above 
     
 
-|  code |  mean |  status |
-|---|---|---|
-|  200 |  okay |  successful |
-|   301   |    permanently moved   |             |
-|     404    |            cannot find the requested resource            |       not found      |
-|   400   |    The server can't process the request. This usually happens when the request isn't in a format the server understands, or has errors in it.   |             |
-|  403 |  dont have permission to acces the file |   |
-|   503   |                     The request cannot be handled due to a problem with the server. This is common when servers are offline for maintenance, and it's expected to be temporary.                    |  server error |
+| code | mean                                                                                                                                                        | status       |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| 200  | okay                                                                                                                                                        | successful   |
+| 301  | permanently moved                                                                                                                                           |              |
+| 404  | cannot find the requested resource                                                                                                                          | not found    |
+| 400  | The server can't process the request. This usually happens when the request isn't in a format the server understands, or has errors in it.                  |              |
+| 403  | dont have permission to acces the file                                                                                                                      |              |
+| 503  | The request cannot be handled due to a problem with the server. This is common when servers are offline for maintenance, and it's expected to be temporary. | server error |
 
 ***
  ### component of uniform resource locator a.k.a url

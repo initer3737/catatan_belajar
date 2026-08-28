@@ -1,0 +1,212 @@
+{
+  "main": {
+    "id": "5396518776ad2a43",
+    "type": "split",
+    "children": [
+      {
+        "id": "704b0534777d4659",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9b4691e17759c137",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "sql/belajar sql dasar 1.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "belajar sql dasar 1"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3e8da68e1c4c8c1e",
+    "type": "split",
+    "children": [
+      {
+        "id": "c85ae2ff0598b907",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "851898cb7590c0f6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "3340b860df7aed51",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "f61546742131da3f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "1aad5b28f9f47c9d",
+    "type": "split",
+    "children": [
+      {
+        "id": "0c24062fd4e27286",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "77a3cc4cd1dbfbc8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "182d7818d207d1ac",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "2b06ce99ffd78424",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "c4237442080b79eb",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "985aaf7bab7ff4db",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "9b4691e17759c137",
+  "lastOpenFiles": [
+    "2026-08-19.md",
+    "sql/belajar sql dasar 1.md",
+    "saran/panduan.md",
+    "odin_projects/foundations/Prerequisites/how web work.md",
+    "sql",
+    "odin_projects/foundations/Prerequisites/web browser.md",
+    "odin_projects/foundations/Prerequisites/vscode.md",
+    "saran",
+    "belara.md",
+    "belajar obsidian/belajar obsidian.md",
+    "sdsd.md",
+    "Untitled.md",
+    "Untitled 1.md",
+    "Untitled.base",
+    "internet.md",
+    "Untitled 2.base",
+    "Untitled 1.base",
+    "rust.md",
+    "uiux.md",
+    "belajar obsidian/Untitled",
+    "belajar obsidian"
+  ]
+}

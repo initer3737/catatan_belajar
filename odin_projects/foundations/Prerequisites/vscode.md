@@ -1,3 +1,11 @@
+---
+tags:
+  - codding
+  - programming
+created: s
+---
+
+
 #### open vscode terminal
 > simply ctrl + backtic 
 ***
@@ -10,3 +18,6 @@
 ### search something ctrl  f
 ### open replace tab ctrl h
 ### command pallete ctrl shift p
+
+
+
