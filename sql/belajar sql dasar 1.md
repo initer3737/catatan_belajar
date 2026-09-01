@@ -474,13 +474,121 @@ CREATE TABLE `whistlist` (
 - misal 1 user punya banyak post dan banyak post dimiliki oleh 1 user
 
 
-| jenis relasi | arti                                                     | contoh                                              |
-| ------------ | -------------------------------------------------------- | --------------------------------------------------- |
-| one to one   | tiap data dari 1 table hanya berelasi ke 1 table lainnya | user have only 1 wallet 1 wallet is belongs to user |
-| one to many  | 1 table punya banyak data di table x                     | 1 user have many post many post belongs to 1 user   |
+| jenis relasi | arti                                                      | contoh                                                         |
+| ------------ | --------------------------------------------------------- | -------------------------------------------------------------- |
+| one to one   | tiap data dari 1 table hanya berelasi ke 1 table lainnya  | user have only 1 wallet 1 wallet is belongs to user            |
+| one to many  | 1 table punya banyak data di table x                      | 1 user have many post many post belongs to 1 user              |
+| many to many | banyak table punya banyak tabel di table x dan sebaliknya | many user can follow user and user can follow more than 2 user |
 
 ---
-### masih di menit ke 04:35:09
+### contoh one to many relationship product can have more than 1 category many category belongs to product
+---
+```sql
+ alter table products
+    add constraint fk_product 
+      foreign key(id_category) references categories(id)
+
+-- result
+CREATE TABLE `products` (
+  `id` varchar(10) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` text,
+  `price` int unsigned NOT NULL,
+  `quantity` int unsigned NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_category` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_product` (`id_category`),
+  FULLTEXT KEY `product_search` (`name`,`description`),
+  CONSTRAINT `fk_product` FOREIGN KEY (`id_category`) REFERENCES `categories` (`id`),
+  CONSTRAINT `price_check` CHECK ((`price` >= 1000))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+```
+---
+### many to many relationship
+- 1 order bisa dimiliki oleh banyak order detail 
+- 1 product bisa dimiliki oleh banyak order detail
+- many to many adalah gabungan 2 buah 1 to many
+### composite key 
+- bisa mencegah data terambil 1 kali dan menjaga agar data tetap unik
+- misal 1 mahasiswa bisa ambil mata kuliah x tapi tidak bisa ambil 2 kali atau lebih 
+
+| product 1    | order detail n                                                              | order 1             |
+| ------------ | --------------------------------------------------------------------------- | ------------------- |
+| id varchar   | id_product                                                                  | id int              |
+| name varchar | id_order                                                                    | total int           |
+| price int    | quantity                                                                    | order date datetime |
+| quantity     | price (untuk mencegah update data price aka save price saat product dibeli) |                     |
+```sql
+
+create table orders_detail(
+  id_product varchar(10) not null,
+  id_order int not null,
+  price int not null,
+  quantity int not null,
+  primary key(id_product,id_order)
+)engine=innoDB
+
+
+  alter table orders_detail
+  add constraint fk_orders_detail_product
+  foreign key(id_product) references products(id)
+
+  alter table orders_detail
+  add constraint fk_orders_detail_orders
+  foreign key(id_order) references orders(id)
+  -- results
+CREATE TABLE `orders_detail` (
+  `id_product` varchar(10) NOT NULL,
+  `id_order` int NOT NULL,
+  `price` int NOT NULL,
+  `quantity` int NOT NULL,
+  PRIMARY KEY (`id_product`,`id_order`),
+  KEY `fk_orders_detail_orders` (`id_order`),
+  CONSTRAINT `fk_orders_detail_orders` FOREIGN KEY (`id_order`) REFERENCES `orders` (`id`),
+  CONSTRAINT `fk_orders_detail_product` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+```
+---
+### join mysql
+
+| nama       |            | efek                                                                                                                             |
+| ---------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| inner join | by default | data akan ditampilkan khusus yang memiliki relasi                                                                                |
+| left       |            | akan menampilkan semua table di kiri dan akan menghasilkan null di tabel kanan jika table kanan tidak punya relasi di table kiri |
+| right join |            | mirip left join tapi ditable kanan akan ditampilkan semuanya                                                                     |
+![696](https://dqlab.id/files/dqlab/file/data-web-1/data-user-5/postgroup/0f0327126cebe99dff31890ba2cd7777/41839aad6ea02bb0d763bef591035c1d.png)
+![476](https://1.bp.blogspot.com/-xBmbZYvwan8/WlfgrC7nfUI/AAAAAAAABKc/ZCpBzJl07AsleVr9LvCwG-YNIiGQ3lr5ACLcBGAs/s1600/join-sql.jpg)
+
+---
+### set operator
+
+| nama         | keterangan                                                                                                                                           |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| union        | operasi menggabungkan2 buah select query dan data duplikat dihapus mirip seperti new set di js namun lambat karena harus mengeliminasi data duplikat |
+| union all    | menggabungkan 2 select atau lebih dan mengeluarkan semua data duplikat apa adanya sehingga performa lebih cepat ketimbang union                      |
+| minus/except | query pertama akan dihilangkan oleh query kedua                                                                                                      |
+![](https://i.ytimg.com/vi/HH5QEfGTSTQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDjSIvJrrAnZHeJwRF6_GEjnphXtw)
+
+---
+
+### transactions
+- memungkinkan dbms menjalankan beberapa perintah jika gagal maka data akan dirollback
+- commit akan dianggap berhasil 
+- mencegah race condition 
+- mencatat query di ram lalu saat commit maka akan di tulis secara permanen di harddisk
+	- query dml insert update delete 
+
+| perintah          | keterangan                                         |
+| ----------------- | -------------------------------------------------- |
+| start transaction | memulai proses transaksi                           |
+| commit            | menyimpan secara permanen seluruh proses transaksi |
+| rollback          | membatalkan secara permanen proses transaksi       |
+ - tidak bisa menggunakkan ddl(merubah struktur table)
+--- 
+### masih di menit ke 05:46:00
 ![](https://www.youtube.com/watch?v=xYBclb-sYQ4&list=PL-CtdCApEFH_P2_2zR6pvDublvpD3fF6W)
 
-[^1]: 
+---
+https://www.geeksforgeeks.org/dbms/database-design-ultimate-guide/
+https://dqlab.id/mengenal-left-join-sql-and-implementasi-pada-beberapa-tabel
